@@ -2,6 +2,7 @@
 
 require_once "Abstractory/Forms/Components/FormComponent.php";
 require_once "Abstractory/Forms/Form.php";
+require_once "Abstractory/Forms/Components/ContentBlock.php";
 require_once "Abstractory/Forms/Components/FormInput.php";
 require_once "Abstractory/Forms/Components/Label.php";
 require_once "Abstractory/Forms/Inputs/InputElement.php";
@@ -35,6 +36,10 @@ $form->add('emailLabel', $emailLabel);
 $emailAddress = new TextInput("emailAddress", array('id' => "emailAddress"));
 $form->add("emailAddress", $emailAddress);
 
+//Add a custom content block
+$privacyPolicy = new ContentBlock("<p>Your email address will be shared with everybody!</p>");
+$form->add("privacyPolicy", $privacyPolicy);
+
 $submit = new SubmitButton("subscribe", array('value' => 'Subscribe'));
 $form->add("subscribButton", $submit);
 
@@ -46,6 +51,7 @@ echo $form->render();
  * <form method='POST' action='http://www.aboynamedsu.net'>
  *     <label for='emailAddress' >Email Address</label>
  *     <input type='text' name='emailAddress' id='emailAddress' />
+ *     <p>Your email address will be shared with everybody!</p>
  *     <input type='submit' name='subscribe' value='Subscribe' />
  * </form>
  *

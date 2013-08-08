@@ -3,7 +3,7 @@
 /**
  * Password
  *
- * @author Suhmayah Banda <suhmayah.banda@digitallifesciences.co.uk>
+ * @author Suhmayah Banda <su@aboynamedsu.net>
  */
 class PasswordInput extends InputElement {
 

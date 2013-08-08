@@ -3,7 +3,7 @@
 /**
  * InputElement
  *
- * @author Suhmayah Banda <suhmayah.banda@digitallifesciences.co.uk>
+ * @author Suhmayah Banda <su@aboynamedsu.net>
  */
 abstract class InputElement extends FormInput {
 

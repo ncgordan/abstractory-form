@@ -3,7 +3,7 @@
 /**
  * HiddenInput
  *
- * @author Suhmayah Banda <suhmayah.banda@digitallifesciences.co.uk>
+ * @author Suhmayah Banda <su@aboynamedsu.net>
  */
 class HiddenInput extends InputElement {
     
