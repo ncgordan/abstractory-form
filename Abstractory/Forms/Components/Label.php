@@ -7,47 +7,58 @@
  */
 class Label extends FormComponent {
 
-    /**
-     * The value of this label
-     * 
-     * @var string
-     */
-    protected $value;
-    
-    /**
-     * The id of the input element the label is associated with
-     * 
-     * @var string 
-     */
-    protected $for;
-    
-    /**
-     * Non manadatory attributes associated with the element
-     * 
-     * @var array
-     */
-    protected $attributes;
-    
-    public function __construct($value, $for, $attributes = null) {
-        $this->value = $value;
-        $this->for = $for;
-        
-        if ($attributes) {
-            $this->attributes = $attributes;
-        }
-    }
-    
-    public function render() {
-        $labelTpl = "<label for='%s' %s>%s</label>";
-        $labelData = array(
-            $this->for,
-            $this->renderAttributes(),
-            $this->value,
-        );
-        $label = vsprintf($labelTpl, $labelData);
-        return $label;
-    }
-    
+	/**
+	 * The value of this label
+	 *
+	 * @var string
+	 */
+	protected $value;
+
+	/**
+	 * The id of the input element the label is associated with
+	 *
+	 * @var string
+	 */
+	protected $for;
+
+	/**
+	 * Non manadatory attributes associated with the element
+	 *
+	 * @var array
+	 */
+	protected $attributes;
+
+	/**
+	 * Return a new form input label
+	 * 
+	 * @param string $value The value of the label - HTML is supported
+	 * @param string $for The id of the input element the label is associated with
+	 * @param array $attributes An associative array mapping HTML attribute names to values for the label tag
+	 */
+	public function __construct($value, $for, array $attributes = null) {
+		$this->value = $value;
+		$this->for = $for;
+
+		if ($attributes) {
+			$this->attributes = $attributes;
+		}
+	}
+
+	/**
+	 * (non-PHPdoc)
+	 * @see FormComponent::render()
+	 */
+	public function render() {
+		$labelTpl = "<label for='%s' %s>%s</label>";
+		$labelData = array(
+				$this->for,
+				$this->renderAttributes(),
+				$this->value,
+		);
+		$label = vsprintf($labelTpl, $labelData);
+		return $label;
+	}
+
 
 }
 

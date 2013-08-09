@@ -6,16 +6,16 @@
  * @author Suhmayah Banda <su@aboynamedsu.net>
  */
 class FileInput extends InputElement {
-    
-    protected $maxFileSize;
 
-    protected function getType() {
-        return "file";
-    }
-    
-    public function setMaxFileSize($bytes) {
-        $this->maxFileSize = $bytes;
-    }
+	protected $maxFileSize;
+
+	protected function getType() {
+		return "file";
+	}
+
+	public function setMaxFileSize($bytes) {
+		$this->maxFileSize = $bytes;
+	}
 
 }
 

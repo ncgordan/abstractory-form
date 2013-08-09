@@ -7,9 +7,9 @@
  */
 class PasswordInput extends InputElement {
 
-    protected function getType() {
-        return "password";
-    }
+	protected function getType() {
+		return "password";
+	}
 
 }
 

@@ -54,31 +54,31 @@ class SelectList extends FormInput {
 		$this->options = $options;
 	}
 
-    public function render() {
-        $inputTpl = "<select name='%s' %s>";
-        $inputTpl.= "\n\t%s";
-        $inputTpl.= "\n</select>";
+	public function render() {
+		$inputTpl = "<select name='%s' %s>";
+		$inputTpl.= "\n\t%s";
+		$inputTpl.= "\n</select>";
 
-    	$tplData = array(
-    		$this->name,
-    		$this->renderAttributes(),
-    		$this->renderOptions(),
-        );
-        return vsprintf($inputTpl, $tplData);
-    }
+		$tplData = array(
+				$this->name,
+				$this->renderAttributes(),
+				$this->renderOptions(),
+		);
+		return vsprintf($inputTpl, $tplData);
+	}
 
-    protected function renderOptions() {
-    	$options = array();
-    	$optionTpl = "<option value='%s' %s>%s</option>";
-    	foreach ($this->options as $value => $label) {
-	    	$tplData = array(
-	    		$value,
-	    		$this->isSelected($value) ? "selected='selected'" : '',
-	    		$label,
-    		);
-    		$options[] = vsprintf($optionTpl, $tplData);
-    	}
-    	return implode("\n\t", $options);
-    }
-    
+	protected function renderOptions() {
+		$options = array();
+		$optionTpl = "<option value='%s' %s>%s</option>";
+		foreach ($this->options as $value => $label) {
+			$tplData = array(
+					$value,
+					$this->isSelected($value) ? "selected='selected'" : '',
+					$label,
+			);
+			$options[] = vsprintf($optionTpl, $tplData);
+		}
+		return implode("\n\t", $options);
+	}
+
 }

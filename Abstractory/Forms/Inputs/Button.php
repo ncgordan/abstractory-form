@@ -7,9 +7,9 @@
  */
 class Button extends InputElement {
 
-    protected function getType() {
-        return "button";
-    }
-    
+	protected function getType() {
+		return "button";
+	}
+
 }
 

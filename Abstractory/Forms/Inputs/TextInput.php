@@ -7,10 +7,10 @@
  */
 class TextInput extends InputElement {
 
-    protected function getType() {
-        return "text";
-    }
-    
+	protected function getType() {
+		return "text";
+	}
+
 }
 
 

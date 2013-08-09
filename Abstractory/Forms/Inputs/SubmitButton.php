@@ -7,9 +7,9 @@
  */
 class SubmitButton extends InputElement {
 
-    protected function getType() {
-        return "submit";
-    }
-    
+	protected function getType() {
+		return "submit";
+	}
+
 }
 
