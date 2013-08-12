@@ -36,12 +36,14 @@ $form->add('emailLabel', $emailLabel);
 $emailAddress = new TextInput("emailAddress", array('id' => "emailAddress"));
 $form->add("emailAddress", $emailAddress);
 
-//Add a custom content block
-$privacyPolicy = new ContentBlock("<p>Your email address will be shared with everybody!</p>");
-$form->add("privacyPolicy", $privacyPolicy);
-
 $submit = new SubmitButton("subscribe", array('value' => 'Subscribe'));
 $form->add("subscribButton", $submit);
+
+//Add a custom content block
+$privacyPolicy = new ContentBlock("<p>Your email address will be shared with everybody!</p>");
+
+//Insert at a particular point in the form. Useful for adding error messages to an existing form
+$form->insertAfter("emailAddress", "privacyPolicy", $privacyPolicy);
 
 echo $form->render();
 
