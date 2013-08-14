@@ -1,11 +1,13 @@
 <?php
 
+namespace Abstractory\Forms\Components\Inputs;
+
 /**
  * SelectList
  *
  * @author Suhmayah Banda <su@aboynamedsu.net>
  */
-class SelectList extends FormInput {
+class SelectList extends \Abstractory\Forms\Components\Input {
 
 	protected $options;
 	protected $selected;

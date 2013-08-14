@@ -1,11 +1,13 @@
 <?php
 
-require_once "Abstractory/Forms/Components/FormComponent.php";
+namespace Abstractory\Forms;
+
+require_once "Abstractory/Forms/Components/Component.php";
 require_once "Abstractory/Forms/Form.php";
 require_once "Abstractory/Forms/Components/ContentBlock.php";
-require_once "Abstractory/Forms/Components/FormInput.php";
+require_once "Abstractory/Forms/Components/Input.php";
 require_once "Abstractory/Forms/Components/Label.php";
-require_once "Abstractory/Forms/Inputs/InputElement.php";
+require_once "Abstractory/Forms/Components/Inputs/InputElement.php";
 
 $inputTypes = array(
     'Button',
@@ -21,7 +23,7 @@ $inputTypes = array(
 );
 
 foreach ($inputTypes as $inputType) {
-    require_once "Abstractory/Forms/Inputs/$inputType.php";
+    require_once "Abstractory/Forms/Components/Inputs/$inputType.php";
 }
 
 //Create a new form and set properties
@@ -30,17 +32,17 @@ $form->setMethod(Form::METHOD_POST);
 $form->setAction("http://www.aboynamedsu.net");
 
 //Create an input label
-$emailLabel = new Label("Email Address", "emailAddress");
+$emailLabel = new Components\Label("Email Address", "emailAddress");
 $form->add('emailLabel', $emailLabel);
 
-$emailAddress = new TextInput("emailAddress", array('id' => "emailAddress"));
+$emailAddress = new Components\Inputs\TextInput("emailAddress", array('id' => "emailAddress"));
 $form->add("emailAddress", $emailAddress);
 
-$submit = new SubmitButton("subscribe", array('value' => 'Subscribe'));
+$submit = new Components\Inputs\SubmitButton("subscribe", array('value' => 'Subscribe'));
 $form->add("subscribButton", $submit);
 
 //Add a custom content block
-$privacyPolicy = new ContentBlock("<p>Your email address will be shared with everybody!</p>");
+$privacyPolicy = new Components\ContentBlock("<p>Your email address will be shared with everybody!</p>");
 
 //Insert at a particular point in the form. Useful for adding error messages to an existing form
 $form->insertAfter("emailAddress", "privacyPolicy", $privacyPolicy);

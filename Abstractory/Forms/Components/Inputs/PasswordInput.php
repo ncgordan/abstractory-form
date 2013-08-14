@@ -1,5 +1,7 @@
 <?php
 
+namespace Abstractory\Forms\Components\Inputs;
+
 /**
  * Password
  *

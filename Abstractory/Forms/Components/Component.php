@@ -1,11 +1,13 @@
 <?php
 
+namespace Abstractory\Forms\Components;
+
 /**
- * FormComponent
+ * Component
  *
  * @author Suhmayah Banda <su@aboynamedsu.net>
  */
-abstract class FormComponent {
+abstract class Component {
 
 	abstract public function render();
 

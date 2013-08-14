@@ -1,11 +1,12 @@
 <?php
 
+namespace Abstractory\Forms\Components;
 /**
  * Label
  *
  * @author Suhmayah Banda <su@aboynamedsu.net>
  */
-class Label extends FormComponent {
+class Label extends Component {
 
 	/**
 	 * The value of this label
@@ -46,7 +47,7 @@ class Label extends FormComponent {
 
 	/**
 	 * (non-PHPdoc)
-	 * @see FormComponent::render()
+	 * @see Component::render()
 	 */
 	public function render() {
 		$labelTpl = "<label for='%s' %s>%s</label>";
