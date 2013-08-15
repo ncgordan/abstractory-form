@@ -1,5 +1,7 @@
 <?php
 
+namespace Abstractory\Forms\Components\Inputs;
+
 /**
  * Button
  *
@@ -7,9 +9,9 @@
  */
 class Button extends InputElement {
 
-	protected function getType() {
-		return "button";
-	}
+    protected function getType() {
+        return "button";
+    }
 
 }
 

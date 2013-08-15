@@ -1,11 +1,13 @@
 <?php
 
+namespace Abstractory\Forms\Components;
+
 /**
- * FormElement
+ * Input
  *
  * @author Suhmayah Banda <su@aboynamedsu.net>
  */
-abstract class FormInput extends FormComponent {
+abstract class Input extends Component {
 
 	/**
 	 * The field name of the input element

@@ -1,11 +1,13 @@
 <?php
 
+namespace Abstractory\Forms\Components\Inputs;
+
 /**
  * TextArea
  *
  * @author Suhmayah Banda <su@aboynamedsu.net>
  */
-class TextArea extends FormInput {
+class TextArea extends \Abstractory\Forms\Components\Input {
 
 	protected $value;
 
@@ -32,7 +34,7 @@ class TextArea extends FormInput {
 
 	/**
 	 * (non-PHPdoc)
-	 * @see FormComponent::render()
+	 * @see Component::render()
 	 */
 	public function render() {
 		$inputTpl = "<textarea name='%s' %s>%s</textarea>";

@@ -1,11 +1,13 @@
 <?php
 
+namespace Abstractory\Forms\Components;
+
 /**
  * ContentBlock
  *
  * @author Suhmayah Banda <su@aboynamedsu.net>
  */
-class ContentBlock extends FormComponent {
+class ContentBlock extends Component {
 
 	protected $html;
 

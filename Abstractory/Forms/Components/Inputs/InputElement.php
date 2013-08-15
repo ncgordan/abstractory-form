@@ -1,11 +1,13 @@
 <?php
 
+namespace Abstractory\Forms\Components\Inputs;
+
 /**
  * InputElement
  *
  * @author Suhmayah Banda <su@aboynamedsu.net>
  */
-abstract class InputElement extends FormInput {
+abstract class InputElement extends \Abstractory\Forms\Components\Input {
 
 	public function render() {
 		$inputTpl = "<input type='%s' name='%s' %s />";

@@ -1,6 +1,13 @@
 <?php
 
-class Form extends FormComponent {
+namespace Abstractory\Forms;
+
+/**
+ * Form
+ *
+ * @author Suhmayah Banda <su@aboynamedsu.net>
+ */
+class Form extends Components\Component {
 
 	const METHOD_POST = "POST";
 	const METHOD_GET = "GET";
@@ -120,7 +127,7 @@ class Form extends FormComponent {
 	 * @param string $index
 	 * @param FormComponent $component
 	 */
-	public function add($index, FormComponent $component) {        
+	public function add($index, Components\Component $component) {        
         if ($this->hasComponent($index)) {
             throw new Exception("Component already exists: $index");
         }
@@ -159,7 +166,7 @@ class Form extends FormComponent {
      * @param string $index The form reference of the component to add
      * @param FormComponent $component The component to add
      */
-    public function insertBefore($componentName, $index, FormComponent $component) {
+    public function insertBefore($componentName, $index, Components\Component $component) {
         $this->assertComponentCanBeAdded($componentName, $index);
         $tmpComponents = array();
         $originalIndex = 0;
@@ -183,7 +190,7 @@ class Form extends FormComponent {
      * @param string $index The form reference of the component to add
      * @param FormComponent $component The component to add
      */
-    public function insertAfter($componentName, $index, FormComponent $component) {
+    public function insertAfter($componentName, $index, Components\Component $component) {
         $this->assertComponentCanBeAdded($componentName, $index);
         $tmpComponents = array();
         $originalIndex = 0;
