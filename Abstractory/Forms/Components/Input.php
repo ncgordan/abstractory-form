@@ -7,7 +7,7 @@ namespace Abstractory\Forms\Components;
  *
  * @author Suhmayah Banda <su@aboynamedsu.net>
  */
-abstract class Input extends Component {
+abstract class Input extends \Abstractory\Forms\Component {
 
 	/**
 	 * The field name of the input element

@@ -2,12 +2,13 @@
 
 namespace Abstractory\Forms\Components\Inputs;
 
+use Abstractory\Forms\Components\Input;
 /**
  * InputElement
  *
  * @author Suhmayah Banda <su@aboynamedsu.net>
  */
-abstract class InputElement extends \Abstractory\Forms\Components\Input {
+abstract class InputElement extends Input{
 
 	public function render() {
 		$inputTpl = "<input type='%s' name='%s' %s />";
@@ -18,7 +19,11 @@ abstract class InputElement extends \Abstractory\Forms\Components\Input {
 		);
 		return vsprintf($inputTpl, $tplData);
 	}
-
+	
+	public function setValue($value) {
+		$this->setAttribute('value', $value);
+	}
+	
 	abstract protected function getType();
 
 }

@@ -2,12 +2,18 @@
 
 namespace Abstractory\Forms;
 
-require_once "Abstractory/Forms/Components/Component.php";
+use Widgets\Booleans\Checkbox;
+
+require_once "Abstractory/Forms/Component.php";
+require_once "Abstractory/Forms/ComponentCollection.php";
+require_once "Abstractory/Forms/Widgets/BooleanWidget.php";
 require_once "Abstractory/Forms/Form.php";
 require_once "Abstractory/Forms/Components/ContentBlock.php";
 require_once "Abstractory/Forms/Components/Input.php";
 require_once "Abstractory/Forms/Components/Label.php";
 require_once "Abstractory/Forms/Components/Inputs/InputElement.php";
+
+require_once 'Abstractory/Forms/Widgets/Booleans/Checkbox.php';
 
 $inputTypes = array(
     'Button',
@@ -26,6 +32,10 @@ foreach ($inputTypes as $inputType) {
     require_once "Abstractory/Forms/Components/Inputs/$inputType.php";
 }
 
+$widgets = array(
+	'Checkbox',
+);
+
 //Create a new form and set properties
 $form = new Form();
 $form->setMethod(Form::METHOD_POST);
@@ -39,10 +49,16 @@ $emailAddress = new Components\Inputs\TextInput("emailAddress", array('id' => "e
 $form->add("emailAddress", $emailAddress);
 
 $submit = new Components\Inputs\SubmitButton("subscribe", array('value' => 'Subscribe'));
-$form->add("subscribButton", $submit);
+$form->add("subscribeButton", $submit);
 
 //Add a custom content block
 $privacyPolicy = new Components\ContentBlock("<p>Your email address will be shared with everybody!</p>");
+
+//Create a widget
+$optIn = new Checkbox("optIn");
+$optIn->checkbox->setId("somethingElse");
+$optIn->label->setValue("I agree to give you rights to my privacy.");
+$form->insertBefore("subscribeButton", "optIn", $optIn);
 
 //Insert at a particular point in the form. Useful for adding error messages to an existing form
 $form->insertAfter("emailAddress", "privacyPolicy", $privacyPolicy);

@@ -2,6 +2,8 @@
 
 namespace Abstractory\Forms\Components;
 
+use Abstractory\Forms\Component;
+
 /**
  * ContentBlock
  *

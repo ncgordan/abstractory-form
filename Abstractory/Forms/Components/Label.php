@@ -1,6 +1,9 @@
 <?php
 
 namespace Abstractory\Forms\Components;
+
+use Abstractory\Forms\Component;
+
 /**
  * Label
  *
@@ -58,6 +61,10 @@ class Label extends Component {
 		);
 		$label = vsprintf($labelTpl, $labelData);
 		return $label;
+	}
+	
+	public function setValue($value) {
+		$this->value = $value;
 	}
 
 
