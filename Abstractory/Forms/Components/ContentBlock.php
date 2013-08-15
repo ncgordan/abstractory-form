@@ -20,7 +20,7 @@ class ContentBlock extends Component {
 	}
 
 	public function setContent($html) {
-		$this->html = $content;
+		$this->html = $html;
 	}
 
 	public function render() {

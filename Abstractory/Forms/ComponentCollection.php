@@ -38,10 +38,10 @@ abstract class ComponentCollection extends Component {
 		$renderedComponents = array();
 		if (count($this->components)) {
 			foreach ($this->components as $component) {
-				$renderedComponents[] = $component->render();
+				$renderedComponents[] = $component->render()."<br/>";
 			}
 		}
-		return "\n\t".implode("\n\t", $renderedComponents)."\n";
+		return implode("\n\t", $renderedComponents);
 	}
 	
 	/**

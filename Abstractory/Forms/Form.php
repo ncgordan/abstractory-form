@@ -122,9 +122,9 @@ class Form extends ComponentCollection {
 	 * @see FormComponent::render()
 	 */
 	public function render() {
-		$form = sprintf("<form %s>", $this->renderAttributes());
+		$form = sprintf("<form %s>\n\t", $this->renderAttributes());
 		$form.= $this->renderComponents();
-		$form.= "</form>";
+		$form.= "\n</form>\n";
 		return $form;
 	}
 

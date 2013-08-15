@@ -2,14 +2,14 @@
 
 namespace Widgets\Booleans;
 
-use Forms\Widgets\BooleanWidget;
 use Abstractory\Forms\Components\Label;
+use Abstractory\Forms\ComponentCollection;
 /**
  *
  * @author suhmayah
  *        
  */
-class Checkbox extends BooleanWidget {
+class Checkbox extends ComponentCollection {
 	
 	/**
 	 * 

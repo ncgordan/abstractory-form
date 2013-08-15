@@ -52,6 +52,10 @@ abstract class Component {
 	public function setId($id) {
 		$this->setAttribute("id", $id);
 	}
+	
+	public function __toString() {
+		return $this->render();
+	}
 
 }
 

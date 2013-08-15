@@ -66,6 +66,10 @@ class Label extends Component {
 	public function setValue($value) {
 		$this->value = $value;
 	}
+	
+	public function setFor($id) {
+		$this->for = $id;
+	}
 
 
 }
