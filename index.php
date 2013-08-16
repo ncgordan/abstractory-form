@@ -59,6 +59,9 @@ $form->insertBefore("subscribeButton", "optIn", $optIn);
 
 $rBtn = new RadioButtonsBoolean("test");
 $form->insertAfter("optIn", "really", $rBtn);
+$rBtn->choice->setValue("Do you really mean it?");
+$rBtn->trueLabel->setValue("I really do!");
+$rBtn->falseLabel->setValue("What do you take me for?");
 
 //Insert at a particular point in the form. Useful for adding error messages to an existing form
 $form->insertAfter("emailAddress", "privacyPolicy", $privacyPolicy);

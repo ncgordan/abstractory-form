@@ -18,31 +18,31 @@ class RadioButtonsBoolean extends ComponentCollection {
 	 * 
 	 * @var Label
 	 */
-	protected $choice;
+	public $choice;
 	
 	/**
 	 * 
 	 * @var Label
 	 */
-	protected $trueLabel;
+	public $trueLabel;
 	
 	/**
 	 * 
 	 * @var Label
 	 */
-	protected $falseLabel;
+	public $falseLabel;
 	
 	/**
 	 * 
 	 * @var RadioButton
 	 */
-	protected $trueBtn;
+	public $trueBtn;
 	
 	/**
 	 * 
 	 * @var RadioButton
 	 */
-	protected $falseBtn;
+	public $falseBtn;
 	
 	protected function init() {
 		parent::init();

@@ -38,7 +38,7 @@ abstract class ComponentCollection extends Component {
 		$renderedComponents = array();
 		if (count($this->components)) {
 			foreach ($this->components as $component) {
-				$renderedComponents[] = $component->render()."<br/>";
+				$renderedComponents[] = $component->render();
 			}
 		}
 		return implode("\n\t", $renderedComponents);

@@ -123,7 +123,11 @@ class Form extends ComponentCollection {
 	 */
 	public function render() {
 		$form = sprintf("<form %s>\n\t", $this->renderAttributes());
-		$form.= $this->renderComponents();
+		$formComponents = array();
+		foreach ($this->components as $component) {
+			$formComponents[] = "<div class='af__row'>\n\t".$component->render()."\n\t</div>";
+		}
+		$form.= implode("\n\n\t", $formComponents);
 		$form.= "\n</form>\n";
 		return $form;
 	}
@@ -140,6 +144,6 @@ class Form extends ComponentCollection {
 		}
 		return parent::renderAttributes();
 	}
-
+	
 }
 
